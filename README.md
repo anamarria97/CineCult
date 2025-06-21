@@ -23,6 +23,6 @@ CineCult este o aplicație web care afișează cele mai bine cotate filme de pe 
 
 ##  Demo live
 
- [Vezi aplicația live pe Netlify](https://wondrous-custard-0e4c7f.netlify.app)
+ [Vezi aplicația live pe Netlify](https://cinecultapp.netlify.app/)
 
 
