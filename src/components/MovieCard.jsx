@@ -1,55 +1,50 @@
 import React from "react";
 
-const MovieCard = ({ movie, isActive, onClick, onPlayTrailer, cast }) => {
+function MovieCard({ movie, isActive, onClick, onPlayTrailer, cast }) {
   return (
     <div
-      onClick={onClick}
-      className={`bg-gray-800 rounded-xl shadow-md overflow-hidden w-64 sm:w-72 transition-all duration-300 relative transform cursor-pointer ${
-        isActive ? "scale-105 shadow-2xl z-20 max-h-full" : "scale-100 max-h-[600px]"
-      }`}
+      className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2`}
     >
-      <img
-        src={movie.poster}
-        alt={movie.title}
-        className="w-full h-72 object-cover rounded-t-lg"
-      />
+      <div
+        className={`bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-105 cursor-pointer h-full flex flex-col`}
+        onClick={onClick}
+      >
+        <img
+          src={movie.poster}
+          alt={movie.title}
+          className="w-full h-auto object-cover"
+        />
+        <div className="p-4 flex flex-col flex-grow">
+          <h3 className="text-lg font-bold mb-2 text-yellow-400">{movie.title}</h3>
+          <p className="text-sm text-gray-300 mb-2 line-clamp-3">{movie.description}</p>
+          <p className="text-sm text-yellow-500 font-semibold">⭐ {movie.rating.toFixed(1)}</p>
 
-      <div className="p-2">
-        <h2 className="text-lg font-semibold mb-1">{movie.title}</h2>
-        <p
-          className={`text-sm text-gray-400 mb-2 ${
-            isActive ? "" : "line-clamp-3"
-          }`}
-        >
-          {movie.description}
-        </p>
-        <div className="flex items-center justify-between mt-1">
-          <span className="text-yellow-400 font-bold">⭐ {movie.rating}</span>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onPlayTrailer();
-            }}
-            className="bg-yellow-500 text-black px-2 py-0.5 rounded-md hover:bg-yellow-400 text-sm font-medium"
-          >
-            ▶ Trailer
-          </button>
+          {isActive && cast.length > 0 && (
+            <div className="mt-2">
+              <h4 className="text-sm font-semibold text-white mb-1">Top Cast:</h4>
+              <ul className="text-sm text-gray-300 list-disc ml-4 space-y-1">
+                {cast.map((actor) => (
+                  <li key={actor.id}>{actor.name}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {isActive && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation(); // prevenim trigger-ul onClick de pe card
+                onPlayTrailer();
+              }}
+              className="mt-4 px-4 py-2 bg-yellow-500 text-gray-900 font-semibold rounded hover:bg-yellow-400 transition-colors"
+            >
+              ▶️ Play Trailer
+            </button>
+          )}
         </div>
-        {isActive && cast && cast.length > 0 && (
-          <div className="mt-4">
-            <h3 className="text-md font-semibold mb-2">Cast</h3>
-            <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
-              {cast.map((actor) => (
-                <li key={actor.id}>
-                  {actor.name} <span className="italic">as {actor.character}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
     </div>
   );
-};
+}
 
 export default MovieCard;
