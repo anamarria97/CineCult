@@ -137,19 +137,20 @@ function App() {
         </div>
 
         {/* Genres Navbar - below title + filters */}
-        <div className="overflow-x-auto mt-4">
-          <div className="flex space-x-6 py-10 pb-5 whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
-            {Object.entries(genreMap).map(([id, name]) => (
-              <a
-                key={id}
-                href={`#${name.replace(/\s+/g, "")}`}
-                className="text-lg text-white hover:text-yellow-400 transition-colors"
-              >
-                {name}
-              </a>
-            ))}
-          </div>
-        </div>
+    <div className="mt-4">
+  <div className="flex flex-col sm:flex-row sm:space-x-6 gap-2 sm:gap-0 py-6">
+    {Object.entries(genreMap).map(([id, name]) => (
+      <a
+        key={id}
+        href={`#${name.replace(/\s+/g, "")}`}
+        className="text-lg text-white hover:text-yellow-400 transition-colors"
+      >
+        {name}
+      </a>
+    ))}
+  </div>
+</div>
+
       </div>
 
       {/* Movies grouped by genre */}
