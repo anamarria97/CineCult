@@ -25,6 +25,9 @@ const yearFilters = [
   { label: "Before 2000", value: "before2000" },
 ];
 
+const [showGenres, setShowGenres] = useState(false);
+
+
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -135,20 +138,44 @@ function App() {
             </select>
           </div>
         </div>
+{/* Genre Dropdown for Mobile */}
+<div className="mt-4 sm:hidden">
+  <button
+    onClick={() => setShowGenres(!showGenres)}
+    className="flex items-center text-white text-lg font-semibold gap-2 focus:outline-none"
+  >
+    {showGenres ? "Hide Genres" : "Show Genres"}
+    <span className={`transform transition-transform ${showGenres ? "rotate-180" : "rotate-0"}`}>
+      ▼
+    </span>
+  </button>
 
-        {/* Genres Navbar - below title + filters */}
-    <div className="mt-4">
-  <div className="flex flex-col sm:flex-row sm:space-x-6 gap-2 sm:gap-0 py-6">
-    {Object.entries(genreMap).map(([id, name]) => (
-      <a
-        key={id}
-        href={`#${name.replace(/\s+/g, "")}`}
-        className="text-lg text-white hover:text-yellow-400 transition-colors"
-      >
-        {name}
-      </a>
-    ))}
-  </div>
+  {showGenres && (
+    <div className="mt-4 flex flex-col gap-2">
+      {Object.entries(genreMap).map(([id, name]) => (
+        <a
+          key={id}
+          href={`#${name.replace(/\s+/g, "")}`}
+          className="text-white hover:text-yellow-400 transition-colors"
+        >
+          {name}
+        </a>
+      ))}
+    </div>
+  )}
+</div>
+
+{/* Genre bar for Desktop */}
+<div className="mt-4 hidden sm:flex sm:space-x-6 py-6">
+  {Object.entries(genreMap).map(([id, name]) => (
+    <a
+      key={id}
+      href={`#${name.replace(/\s+/g, "")}`}
+      className="text-lg text-white hover:text-yellow-400 transition-colors"
+    >
+      {name}
+    </a>
+  ))}
 </div>
 
       </div>
