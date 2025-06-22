@@ -141,7 +141,7 @@ function App() {
 <div className="mt-4 sm:hidden">
   <button
     onClick={() => setShowGenres(!showGenres)}
-    className="flex items-center text-white text-lg font-semibold gap-2 focus:outline-none"
+    className="flex items-center text-white text-lg font-semibold gap-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded"
   >
     {showGenres ? "Hide Genres" : "Show Genres"}
     <span className={`transform transition-transform ${showGenres ? "rotate-180" : "rotate-0"}`}>
