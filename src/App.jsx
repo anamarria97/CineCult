@@ -25,8 +25,6 @@ const yearFilters = [
   { label: "Before 2000", value: "before2000" },
 ];
 
-const [showGenres, setShowGenres] = useState(false);
-
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -35,6 +33,7 @@ function App() {
   const [activeMovieId, setActiveMovieId] = useState(null);
   const [cast, setCast] = useState([]);
   const [selectedTrailerKey, setSelectedTrailerKey] = useState(null);
+  const [showGenres, setShowGenres] = useState(false);
 
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
   const API_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
