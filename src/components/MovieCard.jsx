@@ -33,7 +33,7 @@ function MovieCard({ movie, isActive, onClick, onPlayTrailer, cast }) {
           {isActive && (
             <button
               onClick={(e) => {
-                e.stopPropagation(); // prevenim trigger-ul onClick de pe card
+                e.stopPropagation(); 
                 onPlayTrailer();
               }}
               className="mt-4 px-4 py-2 bg-yellow-500 text-gray-900 font-semibold rounded hover:bg-yellow-400 transition-colors"

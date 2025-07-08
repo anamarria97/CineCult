@@ -105,9 +105,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-yellow-500 p-4 md:p-8">
-      {/* Sticky Header with Title, Search, Filter and Genres */}
       <div className="sticky top-0 z-50 bg-gray-900 py-4 mb-6 px-6 border-b border-gray-800">
-        {/* Title + Search + Filter */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <h1
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -137,7 +135,7 @@ function App() {
             </select>
           </div>
         </div>
-{/* Genre Dropdown for Mobile */}
+
 <div className="mt-4 sm:hidden">
   <button
     onClick={() => setShowGenres(!showGenres)}
@@ -164,7 +162,7 @@ function App() {
   )}
 </div>
 
-{/* Genre bar for Desktop */}
+
 <div className="mt-4 hidden sm:flex sm:space-x-6 py-6">
   {Object.entries(genreMap).map(([id, name]) => (
     <a
@@ -179,7 +177,7 @@ function App() {
 
       </div>
 
-      {/* Movies grouped by genre */}
+    
       <div className="space-y-12">
         {Object.entries(moviesByGenre).map(([genreId, moviesInGenre]) => {
           const genreName = genreMap[genreId] || "🎞 Other";
@@ -218,7 +216,7 @@ function App() {
         })}
       </div>
 
-      {/* Trailer Popup */}
+   
       <TrailerPopup
         trailerKey={selectedTrailerKey}
         onClose={() => setSelectedTrailerKey(null)}
