@@ -1,28 +1,32 @@
-#  CineCult
+# CineCult
 
-CineCult este o aplicație web care afișează cele mai bine cotate filme de pe TMDB. Poți căuta filme, le poți filtra după ani și genuri, și poți vedea trailerul și distribuția principală.
+**CineCult** is a web application that displays the top-rated movies from TMDB. You can search for movies, filter them by year and genre, and view trailers and the main cast.
 
-##  Tehnologii folosite
+## Live Demo
 
-- **React** – bibliotecă JavaScript pentru UI
-- **Tailwind CSS** – pentru styling rapid și modern
-- **Vite** – pentru dezvoltare rapidă și build
-- **TMDB API** – sursa filmelor, trailerelor și distribuției
-- **JavaScript (ES6+)**
-- **HTML & CSS**
-- **Git** – pentru versionare
-- **Netlify** – pentru deploy
+ [Check out the live app on Netlify](https://cinecultapp.netlify.app/)
 
-##  Funcționalități principale
+---
 
-- Căutare filme după titlu
-- Filtrare filme după an (ex: după 2020, între 2010–2019, etc.)
-- Grupare filme după gen (comedy, drama, etc.)
-- Vizualizare trailer YouTube
-- Afișare actori principali
+##  Technologies Used
 
-##  Demo live
+- **React** – JavaScript library for building user interfaces  
+- **Tailwind CSS** – for fast and modern styling  
+- **Vite** – for fast development and build process  
+- **TMDB API** – source for movies, trailers, and cast information  
+- **JavaScript (ES6+)**  
+- **HTML & CSS**  
+- **Git** – version control  
+- **Netlify** – deployment platform  
 
- [Vezi aplicația live pe Netlify](https://cinecultapp.netlify.app/)
+---
 
+##  Features
 
+-  Search for movies by title  
+-  Filter movies by release year (e.g., after 2020, between 2010–2019, etc.)  
+-  Group movies by genre (comedy, drama, etc.)  
+-  Watch YouTube trailers  
+-  Display main cast members  
+
+---
